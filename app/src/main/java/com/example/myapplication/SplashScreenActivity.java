@@ -14,7 +14,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 2000;
 
-    ImageView logo_image;
     TextView desc, gamer;
     Animation bottom, top, logo_anim;
 
@@ -23,15 +22,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        logo_image = findViewById(R.id.logo);
         gamer = findViewById(R.id.gamer_text);
         desc = findViewById(R.id.bannerDescription_splash);
 
-        logo_anim = AnimationUtils.loadAnimation(this,R.anim.logo_animation);
         top = AnimationUtils.loadAnimation(this, R.anim.top_text_animation);
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom_text_animation);
 
-        logo_image.setAnimation(logo_anim);
         gamer.setAnimation(top);
         desc.setAnimation(bottom);
 
