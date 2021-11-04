@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="ranks">
+        <item>Select Rank</item>
+        <item>Unranked</item>
+        <item>Silver I</item>
+        <item>Silver II</item>
+        <item>Silver III</item>
+        <item>Silver IV</item>
+        <item>Silver Elite</item>
+        <item>Silver Elite Master</item>
+        <item>Gold Nova I</item>
+        <item>Gold Nova II</item>
+        <item>Gold Nova III</item>
+        <item>Gold Nova Master</item>
+        <item>Master Guardian I</item>
+        <item>Master Guardian II</item>
+        <item>Master Guardian Elite</item>
+        <item>Distinguished Master Guardian</item>
+        <item>Legendary Eagle</item>
+        <item>Legendary Eagle Master</item>
+        <item>Supreme Master First Class</item>
+        <item>Global Elite</item>
+    </string-array>
+
+    <string-array name="levels">
+        <item>Select Level</item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+        <item>Level 5</item>
+        <item>Level 6</item>
+        <item>Level 7</item>
+        <item>Level 8</item>
+        <item>Level 9</item>
+        <item>Level 10</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
