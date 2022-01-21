@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import javax.net.ssl.SNIHostName;
+
 public class RegisterActivity extends AppCompatActivity {
 
     EditText edtusername, edtsurname, edtpassowrd, edt_repeat_password, edtname, edtemail;
@@ -27,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     TextView txt_login, banner;
     ProgressDialog mProgressDialog;
     DB_Helper_UserTable DB;
+    Spinner level, rank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
         banner = findViewById(R.id.banner_text_splash);
         mProgressDialog = new ProgressDialog(this);
 
+        level = (Spinner) findViewById(R.id.spinner_level);
+        rank = (Spinner) findViewById(R.id.spinner_rank);
         edtemail = findViewById(R.id.email);
         register = findViewById(R.id.register_button);
         edtname = findViewById(R.id.name);
@@ -55,7 +60,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String repeat_password = edt_repeat_password.getText().toString();
                 String name = edtname.getText().toString();
                 String surname = edtsurname.getText().toString();
-                String email = edtemail.getText().toString();
+                String email = edtemail.getText().toString();;
+
 
 
             if(username.equals("")||password.equals("")||repeat_password.equals("")||name.equals("")||surname.equals("")||email.equals(""))

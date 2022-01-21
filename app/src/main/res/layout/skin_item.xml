@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/cartImage"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:fontFamily="sans-serif"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/skinName"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/cartImage"
+        android:layout_marginTop="20dip"
+        android:text="Skin Name"/>
+
+    <TextView
+        android:id="@+id/Quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/cartImage"
+        android:layout_below="@id/skinName"
+        android:layout_marginTop="0dip"
+        android:text="Quantity"/>
+
+
+    <TextView
+        android:id="@+id/skin_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/cartImage"
+        android:layout_below="@id/Quantity"
+        android:layout_marginTop="0dip"
+        android:text="Price"/>
+
+
+</RelativeLayout>

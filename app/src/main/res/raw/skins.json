@@ -1,0 +1,19 @@
+{
+  "skins": [
+    {
+      "skinName": "★ M9 Bayonet | Black Laminate",
+      "Exterior": "Minimal Wear",
+      "description": "This is the M-9 bayonet. Originally intended to be mounted on a rifle, it is also well suited to close-quarters combat. It has been stonewashed and given a black laminate handle.",
+      "imageUrl": "blacklaminatem9.png",
+      "price": 366.01
+    },
+    {
+      "skinName": "★ StatTrak™ Karambit | Lore",
+      "description": "With its curved blade mimicking a tiger's claw, the karambit was developed as part of the southeast Asian martial discipline of silat. The knife is typically used with a reverse grip, with the finger ring on the index finger. It has been custom painted with knotwork.",
+      "imageUrl": "karambitlore.png",
+      "price": 993.59
+    }
+  ]
+}
+
+

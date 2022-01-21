@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShopActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
         <activity

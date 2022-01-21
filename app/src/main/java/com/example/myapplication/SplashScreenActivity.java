@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -16,6 +17,12 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     TextView desc, gamer;
     Animation bottom, top, logo_anim;
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
+    private static final String KEY_USERNAME = "username";
+    private static final String KEY_PASSWORD = "password";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,15 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         gamer.setAnimation(top);
         desc.setAnimation(bottom);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+        String name = sharedPreferences.getString(KEY_USERNAME, null);
+
+        if (name != null){
+            Intent intent = new Intent(SplashScreenActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override

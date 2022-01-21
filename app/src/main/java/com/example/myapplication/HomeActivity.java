@@ -26,15 +26,26 @@ public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Fragment selectedFragment = null;
+    Button go;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        go = findViewById(R.id.go);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ShopActivity.class));
+            }
+        });
+
     }
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
@@ -65,4 +76,6 @@ public class HomeActivity extends AppCompatActivity {
                     return  true;
                 }
             };
+
+
 }
