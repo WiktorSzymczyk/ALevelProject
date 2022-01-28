@@ -42,7 +42,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         // Indices for the _id, description, and priority columns
         int idIndex = mCursor.getColumnIndex(SkinContract.SkinEntry.CARTID);
-        int fragranceName = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_NAME);
+        int skinName = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_NAME);
         int image = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_IMAGE);
         int quantity = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_QUANTITY);
         int price = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_TOTAL_PRICE);
@@ -53,9 +53,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         // Determine the values of the wanted data
         final int id = mCursor.getInt(idIndex);
         String name = mCursor.getString(fragranceName);
-        String fragranceImage = mCursor.getString(image);
-        int fragranceQuantity = mCursor.getInt(quantity);
-        Double fragrancePrice = mCursor.getDouble(price);
+        String skinImage = mCursor.getString(image);
+        int skinQuantity = mCursor.getInt(quantity);
+        Double skinPrice = mCursor.getDouble(price);
 
         DecimalFormat precision = new DecimalFormat("0.00");
 
@@ -63,11 +63,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
         //Set values
         holder.itemView.setTag(id);
-        holder.fragName.setText(name);
-        holder.fragQuantity.setText("Quantity ordering: " + String.valueOf(fragranceQuantity));
-        holder.fragPrice.setText("$" + precision.format(fragrancePrice));
+        holder.skinName.setText(name);
+        holder.skinQuantity.setText("Quantity ordering: " + String.valueOf(fragranceQuantity));
+        holder.skinPrice.setText("$" + precision.format(fragrancePrice));
 
-        String poster = "http://boombox.ng/images/fragrance/" + fragranceImage;
+        String poster = "http://boombox.ng/images/fragrance/" + skinImage;
 
         Glide.with(mContext)
                 .load(poster)
