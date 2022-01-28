@@ -14,16 +14,10 @@ import java.text.DecimalFormat;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
-    // Class variables for the Cursor that holds task data and the Context
     private Cursor mCursor;
     private Context mContext;
 
 
-    /**
-     * Constructor for the CustomCursorAdapter that initializes the Context.
-     *
-     * @param mContext the current Context
-     */
     public void CartAdapter(Context mContext) {
         this.mContext = mContext;
     }
@@ -40,7 +34,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(CartViewHolder holder, int position) {
 
-        // Indices for the _id, description, and priority columns
         int idIndex = mCursor.getColumnIndex(SkinContract.SkinEntry.CARTID);
         int skinName = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_NAME);
         int image = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_IMAGE);
@@ -48,9 +41,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         int price = mCursor.getColumnIndex(SkinContract.SkinEntry.COLUMN_CART_TOTAL_PRICE);
 
 
-        mCursor.moveToPosition(position); // get to the right location in the cursor
+        mCursor.moveToPosition(position); 
 
-        // Determine the values of the wanted data
         final int id = mCursor.getInt(idIndex);
         String name = mCursor.getString(fragranceName);
         String skinImage = mCursor.getString(image);
@@ -64,8 +56,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         //Set values
         holder.itemView.setTag(id);
         holder.skinName.setText(name);
-        holder.skinQuantity.setText("Quantity ordering: " + String.valueOf(fragranceQuantity));
-        holder.skinPrice.setText("$" + precision.format(fragrancePrice));
+        holder.skinQuantity.setText("Quantity ordering: " + String.valueOf(skinQuantity));
+        holder.skinPrice.setText("£" + precision.format(fragrancePrice));
 
         String poster = "http://boombox.ng/images/fragrance/" + skinImage;
 
@@ -86,14 +78,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     public Cursor swapCursor(Cursor c) {
-        // check if this cursor is the same as the previous cursor (mCursor)
+       
         if (mCursor == c) {
-            return null; // bc nothing has changed
+            return null; 
         }
         Cursor temp = mCursor;
-        this.mCursor = c; // new cursor value assigned
-
-        //check if this is a valid cursor, then update the cursor
+        this.mCursor = c; 
+        
         if (c != null) {
             this.notifyDataSetChanged();
         }
@@ -101,14 +92,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder {
-        TextView fragName, fragQuantity, fragPrice;
+        TextView skinName, skinQuantity, skinPrice;
         ImageView image;
         public CartViewHolder(View itemView) {
             super(itemView);
 
-            fragName = (TextView) itemView.findViewById(R.id.fragranceName);
-            fragQuantity = (TextView) itemView.findViewById(R.id.quantity);
-            fragPrice = (TextView) itemView.findViewById(R.id.price);
+            skinName = (TextView) itemView.findViewById(R.id.skinName);
+            skinQuantity = (TextView) itemView.findViewById(R.id.quantity);
+            skinPrice = (TextView) itemView.findViewById(R.id.price);
             image = (ImageView) itemView.findViewById(R.id.cartImage);
         }
 
