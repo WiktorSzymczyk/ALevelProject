@@ -6,8 +6,4 @@
         android:drawable="@drawable/ic_shopping_cart_foreground"
         android:gravity="center"/>
 
-    <item
-        android:id="@+id/ic_badge"
-        android:drawable="@drawable/ic_shopping_cart_foreground"/>
-
 </layer-list>
